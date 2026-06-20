@@ -1,0 +1,274 @@
+SEÑAL VIP
+
+$BNB - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 580.55 (ORDEN LIMIT)
+• Stop Loss: 582.20
+
+Take Profits:
+• TP1: 577.20
+• TP2: 573.10
+• TP3: 570.00
+
+Justificación:
+
+BNB se encuentra en una zona técnica ideal para buscar un rechazo de corto plazo tras varios intentos de recuperación dentro de una estructura que continúa mostrando debilidad.
+
+La entrada LIMIT en 580.55 busca capturar un posible retesteo de la resistencia intradía y de la zona donde previamente aparecieron vendedores, maximizando la relación riesgo/beneficio.
+
+El área comprendida entre 580 y 581 coincide con una zona de oferta relevante, donde podrían activarse nuevamente órdenes de venta si el precio realiza un último barrido de liquidez antes de continuar a la baja.
+
+El Stop Loss en 582.20 se ubica por encima de la resistencia inmediata y marca el punto de invalidación del escenario bajista. Una ruptura sostenida por encima de esa zona aumentaría significativamente las probabilidades de una extensión alcista.
+
+TP1 busca capturar la primera corrección hacia 577.20, mientras que TP2 apunta a una extensión más profunda en 573.10. TP3 contempla un movimiento bajista adicional si aumenta la presión vendedora y el mercado acelera la caída.
+
+La relación riesgo/beneficio resulta favorable gracias al stop reducido y a la posibilidad de capturar un retroceso significativo desde la zona de resistencia.
+
+⚠️ Mientras el precio permanezca por debajo de 582.20, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista de corto plazo con entrada estratégica mediante orden LIMIT en resistencia.
+
+SEÑAL VIP
+
+$ADA - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 0.1622 – 0.1626
+• Stop Loss: 0.1635
+
+Take Profits:
+• TP1: 0.1617
+• TP2: 0.1603
+• TP3: 0.1595
+
+Justificación:
+
+Cardano viene de registrar un impulso alcista acelerado desde la zona de 0.1586 hasta alcanzar máximos cercanos a 0.1628, generando una extensión de precio que comienza a mostrar señales de agotamiento en temporalidades cortas.
+
+El RSI(6) en 15 minutos se encuentra en niveles de sobrecompra cercanos a 78 puntos, una condición que suele favorecer correcciones técnicas o tomas de ganancias antes de una nueva decisión direccional.
+
+La zona de 0.1628 está actuando como resistencia inmediata, donde ya aparecen señales de rechazo mediante mechas superiores y desaceleración del impulso comprador.
+
+Además, el precio se encuentra alejado de sus medias móviles principales de corto plazo, aumentando la probabilidad de un retorno hacia zonas de equilibrio.
+
+TP1 busca capturar el regreso hacia la zona de la MA(7) y la MA(99) alrededor de 0.1617, mientras que TP2 apunta a la MA(25) en 0.1603. TP3 contempla una extensión bajista adicional si aumenta la presión vendedora.
+
+El Stop Loss en 0.1635 invalida completamente la operación. Una ruptura sostenida por encima de esa zona podría habilitar una extensión alcista hacia niveles superiores.
+
+⚠️ Mientras el precio permanezca por debajo de 0.1635, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista de corto plazo orientado a capturar una corrección técnica tras una subida vertical.
+
+SEÑAL VIP
+
+$DASH - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 35.70 – 35.77
+• Stop Loss: 35.95
+
+Take Profits:
+• TP1: 35.48
+• TP2: 35.28
+• TP3: 35.00
+
+Justificación:
+
+DASH viene de protagonizar un rebote agresivo desde los 34.47 hasta la zona actual de 35.73, generando una extensión de precio que comienza a mostrar señales de agotamiento en temporalidades cortas.
+
+El RSI(6) en 15 minutos alcanzó niveles extremos de sobrecompra por encima de 80, una condición que suele favorecer correcciones técnicas o tomas de ganancias de corto plazo.
+
+La cotización se encuentra enfrentando una resistencia dinámica relevante en la MA(99), ubicada cerca de 35.80, nivel donde el avance alcista comenzó a perder fuerza.
+
+Además, el precio quedó significativamente alejado de la MA(7) y la MA(25), aumentando la probabilidad de un movimiento de retroceso hacia zonas de equilibrio.
+
+TP1 busca capturar el retorno hacia la MA(7), mientras que TP2 apunta a la MA(25). TP3 contempla una corrección más profunda si aumenta la presión vendedora.
+
+El Stop Loss se ubica en 35.95, por encima de la resistencia inmediata. Una ruptura sostenida sobre esa zona invalidaría la tesis bajista y abriría espacio para una extensión alcista adicional.
+
+⚠️ Mientras el precio permanezca por debajo de 35.95, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista de corto plazo orientado a capturar una corrección técnica tras una subida excesivamente acelerada.
+
+SEÑAL VIP
+
+$SUI - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 0.7110 – 0.7115
+• Stop Loss: 0.7300
+
+Take Profits:
+• TP1: 0.7020
+• TP2: 0.6980
+• TP3: 0.6880
+
+Justificación:
+
+La estructura de 4H mantiene una señal SHORT de alta convicción, con una confianza cercana al 87%, respaldada por una tendencia diaria claramente bajista.
+
+La presión vendedora continúa dominando la estructura principal del mercado, mientras el precio permanece incapaz de recuperar niveles de resistencia relevantes.
+
+El ATR de 1H (~0.011863) muestra una compresión de volatilidad importante. Este tipo de escenarios suele anticipar movimientos bruscos una vez que el precio abandona la fase de consolidación actual.
+
+La zona de entrada propuesta permite posicionarse cerca de resistencia, con un riesgo controlado gracias a un Stop Loss claramente definido en 0.7330.
+
+TP1 busca capturar la primera toma de liquidez en 0.7050, mientras que TP2 y TP3 apuntan a una extensión bajista más profunda si el momentum vendedor se acelera.
+
+Aunque las lecturas de sobreventa pueden generar rebotes temporales, la estructura general continúa favoreciendo una continuación descendente mientras no aparezcan señales claras de reversión.
+
+⚠️ Mientras el precio permanezca por debajo de 0.7330, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista con potencial de continuación hacia soportes inferiores.
+
+SEÑAL VIP
+
+$BNB - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 599 – 600
+• Stop Loss: 606
+
+Take Profits:
+• TP1: 594
+• TP2: 590
+• TP3: 586
+
+Justificación:
+
+La estructura de 4H mantiene una señal SHORT con una confianza cercana al 82%, alineada con la tendencia bajista dominante en temporalidades superiores.
+
+El RSI en 15 minutos (~41.07) continúa por debajo de la zona neutral, mostrando que el impulso sigue favoreciendo a los vendedores y que aún no existen señales claras de agotamiento bajista.
+
+La zona de entrada entre 599 y 600 coincide con un área donde el precio podría encontrar resistencia, ofreciendo una oportunidad atractiva para incorporarse a favor de la tendencia.
+
+El ATR de 1H (~4.97) indica suficiente volatilidad para alcanzar los objetivos planteados sin necesidad de movimientos extremos del mercado.
+
+TP1 busca capturar la primera toma de liquidez en 594, mientras que TP2 y TP3 apuntan a una extensión bajista más profunda si aumenta la presión vendedora.
+
+La combinación de tendencia bajista, momentum débil y una estructura técnica favorable respalda la continuidad del movimiento hacia soportes inferiores.
+
+⚠️ Mientras el precio permanezca por debajo de 606, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista con potencial de continuación hacia niveles inferiores.
+
+SEÑAL VIP
+
+$HYPE - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 74.50 – 74.80 (ORDEN LIMIT)
+• Stop Loss: 76.20
+
+Take Profits:
+• TP1: 73.20
+• TP2: 72.50
+• TP3: 71.20
+
+Justificación:
+
+Tras el rechazo en 76.72, HYPE mantiene una estructura correctiva en temporalidad de 15 minutos.
+
+La zona entre 74.50 y 74.80 coincide con resistencia dinámica y posibles ventas de quienes quedaron atrapados en el movimiento bajista reciente.
+
+El RSI muestra pérdida de momentum y todavía no confirma una recuperación sostenida, favoreciendo nuevas ventas en los retrocesos.
+
+TP1 busca capturar el soporte intradía más cercano, mientras que TP2 y TP3 apuntan a una continuación bajista si el mercado pierde nuevamente la zona de 73.00.
+
+⚠️ Mientras el precio permanezca por debajo de 76.20, el escenario SHORT continúa siendo válido.
+
+Sesgo: Bajista de corto plazo con entrada por retroceso.
+
+SEÑAL VIP
+
+$XRP - LONG 📈
+
+Plan de Comercio:
+• Entrada: 1.1985 – 1.1990
+• Stop Loss: 1.1880
+
+Take Profits:
+• TP1: 1.2100
+• TP2: 1.2160
+• TP3: 1.2200
+
+Justificación:
+
+La estructura de 4H mantiene una señal LONG con una confianza cercana al 80%, mostrando una mejora progresiva del impulso comprador en el corto plazo.
+
+El RSI en 15 minutos (~51) se encuentra en una zona completamente neutral, sin señales de sobrecompra, lo que permite que el precio continúe avanzando sin enfrentar agotamiento inmediato.
+
+La zona de entrada propuesta se sitúa cerca de un soporte relevante, ofreciendo una relación riesgo/beneficio favorable con un Stop Loss claramente definido en 1.1880.
+
+El ATR de 1H (~0.0098) refleja una volatilidad comprimida. Este tipo de condiciones suele anticipar movimientos expansivos cuando el mercado rompe la fase de consolidación actual.
+
+TP1 apunta a la primera resistencia en 1.2100, mientras que TP2 y TP3 buscan capturar una extensión alcista más amplia si el impulso comprador continúa fortaleciéndose.
+
+La combinación de momentum neutral, volatilidad comprimida y estructura favorable en temporalidades intermedias respalda la posibilidad de una continuación alcista en el corto plazo.
+
+⚠️ Mientras el precio permanezca por encima de 1.1880, el escenario LONG sigue completamente vigente.
+
+Sesgo: Alcista de corto plazo con potencial de expansión hacia resistencias superiores.
+
+SEÑAL VIP
+
+$ADA - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 0.1744
+• Stop Loss: 0.1780
+
+Take Profits:
+• TP1: 0.1735
+• TP2: 0.1728
+• TP3: 0.1720
+
+Justificación:
+
+La estructura actual favorece un escenario SHORT, respaldado por una tendencia macro bajista que continúa dominando el comportamiento del precio.
+
+El RSI se encuentra en 56, mostrando que el activo aún no está en sobreventa y mantiene margen para una corrección adicional antes de encontrar soporte significativo.
+
+La zona actual de 0.1744 coincide con un área donde el impulso alcista comienza a perder fuerza, aumentando las probabilidades de una toma de ganancias por parte de los compradores de corto plazo.
+
+TP1 busca capturar el primer movimiento correctivo hacia 0.1735, mientras que TP2 y TP3 apuntan a una extensión bajista más profunda si la presión vendedora aumenta.
+
+El Stop Loss en 0.1780 se ubica por encima de la resistencia inmediata y define claramente la invalidación de la operación.
+
+La relación riesgo/beneficio resulta favorable para una operación de continuación bajista dentro de la tendencia principal.
+
+⚠️ Mientras el precio permanezca por debajo de 0.1780, el escenario SHORT sigue vigente.
+
+Sesgo: Bajista con potencial de continuación hacia soportes inferiores.
+
+SEÑAL VIP
+
+$ENA - CORTO 📉
+
+Plan de Comercio:
+• Entrada: 0.08720 – 0.08730
+• Stop Loss: 0.08950
+
+Take Profits:
+• TP1: 0.08600
+• TP2: 0.08480
+• TP3: 0.08290
+
+Justificación:
+
+La estructura de 4H mantiene una señal SHORT de muy alta convicción, con una confianza cercana al 95%, respaldada por una tendencia principal bajista que continúa favoreciendo la presión vendedora.
+
+El RSI en 15 minutos (~47.37) permanece en una zona neutral con sesgo débil, sin mostrar señales de agotamiento vendedor ni indicios sólidos de reversión alcista.
+
+La zona de entrada se encuentra cerca de una resistencia intradía relevante, donde el precio podría volver a encontrar oferta y reanudar el movimiento descendente.
+
+TP1 busca capturar la primera toma de liquidez en 0.08600, mientras que TP2 y TP3 apuntan a una extensión bajista más profunda si aumenta el momentum vendedor.
+
+El Stop Loss en 0.08920 define claramente la invalidación del escenario, permitiendo una gestión eficiente del riesgo mientras se mantienen objetivos atractivos.
+
+La volatilidad actual sigue favoreciendo movimientos rápidos una vez que el precio abandone la consolidación presente.
+
+⚠️ Mientras el precio permanezca debajo de 0.08920, el escenario SHORT sigue completamente vigente.
+
+Sesgo: Bajista con potencial de continuación hacia soportes inferiores.
