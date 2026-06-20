@@ -1,6 +1,10 @@
-export type ChartInterval = "15m" | "1h" | "4h"
+export type ChartInterval = "1m" | "15m" | "1h" | "4h"
 
-export const CHART_INTERVALS: ChartInterval[] = ["15m", "1h", "4h"]
+export const CHART_INTERVALS: ChartInterval[] = ["1m", "15m", "1h", "4h"]
+
+export const KLINE_INTERVALS = CHART_INTERVALS
+
+export type KlineInterval = ChartInterval
 
 export interface MarketCandle {
   time: number

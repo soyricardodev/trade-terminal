@@ -1,6 +1,6 @@
 import type { ParsedVipSignal, TradeDirection } from "@/lib/signal-risk/types"
 
-const ASSET_PATTERN = /\$([A-Z0-9]+)\s*-\s*(CORTO|LONG)/i
+const ASSET_PATTERN = /\$([A-Z0-9]+(?:\/USDT)?)\s*-\s*(CORTO|LONG|LARGO)/i
 const PLAN_SECTION_PATTERN = /Plan de Comercio:\s*([\s\S]*?)(?=Take Profits:|Justificación:|$)/i
 const ENTRY_PATTERN =
   /Entrada:\s*([\d.]+)\s*(?:[–\-]\s*([\d.]+))?(?:\s*\([^)]*\))?/i
@@ -10,7 +10,14 @@ const INVALIDATION_PATTERN =
   /⚠️\s*Mientras el precio permanezca\s+(?:por\s+)?(?:debajo|por encima)\s+de\s+([\d.]+)/i
 
 function parseDirection(raw: string): TradeDirection {
-  return raw.toUpperCase() === "LONG" ? "LONG" : "SHORT"
+  const upper = raw.toUpperCase()
+  return upper === "LONG" || upper === "LARGO" ? "LONG" : "SHORT"
+}
+
+function normalizePair(rawSymbol: string): string {
+  const upper = rawSymbol.toUpperCase()
+  const base = upper.endsWith("/USDT") ? upper.slice(0, -5) : upper
+  return `${base}/USDT`
 }
 
 function parseNumber(value: string): number {
@@ -38,9 +45,8 @@ export function parseVipSignal(text: string): ParsedVipSignal | null {
   const assetMatch = trimmed.match(ASSET_PATTERN)
   if (!assetMatch) return null
 
-  const symbol = assetMatch[1].toUpperCase()
+  const pair = normalizePair(assetMatch[1])
   const direction = parseDirection(assetMatch[2])
-  const pair = `${symbol}/USDT`
 
   const planSection = extractPlanSection(trimmed)
   if (!planSection) return null

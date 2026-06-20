@@ -1,10 +1,10 @@
 "use client"
 
-import { IconChartLine, IconNotebook } from "@tabler/icons-react"
+import { IconChartLine, IconHistory, IconNotebook } from "@tabler/icons-react"
 
 import { cn } from "@/lib/utils"
 
-export type MobileTab = "analyze" | "journal"
+export type MobileTab = "analyze" | "journal" | "history"
 
 interface MobileNavProps {
   activeTab: MobileTab
@@ -15,6 +15,7 @@ interface MobileNavProps {
 const tabs: { id: MobileTab; label: string; icon: typeof IconChartLine }[] = [
   { id: "analyze", label: "Analyze", icon: IconChartLine },
   { id: "journal", label: "Journal", icon: IconNotebook },
+  { id: "history", label: "Historial", icon: IconHistory },
 ]
 
 export function MobileNav({ activeTab, onTabChange, className }: MobileNavProps) {

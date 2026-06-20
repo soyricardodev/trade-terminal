@@ -7,6 +7,7 @@ import { CHART_INTERVALS } from "@/lib/market/types"
 interface ChartToolbarProps {
   interval: ChartInterval
   onIntervalChange: (interval: ChartInterval) => void
+  intervals?: ChartInterval[]
   lastPrice: number | null
   isLive: boolean
   streamStatus?: "idle" | "loading" | "ready" | "streaming" | "fallback" | "error"
@@ -21,13 +22,15 @@ function statusLabel(
 ): string {
   if (isFallback) return "Offline"
   if (isLive || streamStatus === "streaming") return "Live"
-  if (streamStatus === "loading" || streamStatus === "ready") return "Connecting"
+  if (streamStatus === "loading") return "Loading"
+  if (streamStatus === "ready") return "Historical"
   return "Delayed"
 }
 
 export function ChartToolbar({
   interval,
   onIntervalChange,
+  intervals = CHART_INTERVALS,
   lastPrice,
   isLive,
   streamStatus,
@@ -45,7 +48,7 @@ export function ChartToolbar({
       )}
     >
       <div className="flex items-center gap-1">
-        {CHART_INTERVALS.map((value) => (
+        {intervals.map((value) => (
           <button
             key={value}
             type="button"

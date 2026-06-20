@@ -47,3 +47,23 @@ Fallback candle data generated locally when Binance API is unavailable. Anchored
 ## VIP paste
 
 Paste area for VIP signal messages. Extracts pair, direction, entry, SL, and TPs into the order panel without auto-changing margin or leverage.
+
+## Backtest
+
+Offline simulation of historical VIP signals against Binance Futures 1m klines. Uses limit-order fill assumptions, 50/30/20 exits, and breakeven SL after TP1. Run via `bun run backtest:vip`; results appear in the **Historial VIP** tab.
+
+## Signal outcome
+
+Classification of a simulated VIP trade: `not_executed`, `loss`, `breakeven`, `win`, `partial_win`, `full_win`, `timeout`, or `no_data`. Derived from fill status, TP hits, and net PnL.
+
+## Not executed
+
+The price never touched the entry range within the observation window. No position was opened in the simulation.
+
+## Breakeven stop
+
+After TP1 fills (50% closed), stop loss moves to the entry price. If the remainder is stopped at entry, net PnL is approximately zero.
+
+## Observation window
+
+Time span after a signal timestamp during which entry and exit are evaluated. Default 24 hours (`--hours` flag on CLI).

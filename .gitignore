@@ -34,3 +34,9 @@ pnpm-debug.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# telegram export (large, local only)
+result.json
+
+# klines cache (regenerable)
+data/klines-cache/

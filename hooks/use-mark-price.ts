@@ -27,12 +27,12 @@ export function useMarkPrice(pair: string, enabled = true): UseMarkPriceResult {
 
     async function pollMarkPrice() {
       try {
-        const params = new URLSearchParams({ symbol, limit: "1" })
-        const response = await fetch(`/api/market/klines?${params}`)
+        const params = new URLSearchParams({ symbol })
+        const response = await fetch(`/api/market/mark-price?${params}`)
         if (!response.ok || disposed) return
-        const body = (await response.json()) as { lastPrice: number | null }
-        if (body.lastPrice !== null && !disposed) {
-          setMarkPrice(body.lastPrice)
+        const body = (await response.json()) as { markPrice: number }
+        if (Number.isFinite(body.markPrice) && !disposed) {
+          setMarkPrice(body.markPrice)
         }
       } catch {
         // keep last known price

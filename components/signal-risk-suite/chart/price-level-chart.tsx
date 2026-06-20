@@ -4,6 +4,7 @@ import {
   CandlestickSeries,
   ColorType,
   createChart,
+  createSeriesMarkers,
   CrosshairMode,
   LineStyle,
 } from "lightweight-charts"
@@ -12,13 +13,19 @@ import type {
   IChartApi,
   IPriceLine,
   ISeriesApi,
+  ISeriesMarkersPluginApi,
+  SeriesMarker,
   Time,
   UTCTimestamp,
 } from "lightweight-charts"
-import { useEffect, useRef } from "react"
+import { useEffect, useMemo, useRef } from "react"
 
 import { ChartToolbar } from "@/components/signal-risk-suite/chart/chart-toolbar"
 import { generateSyntheticCandles } from "@/components/signal-risk-suite/chart/synthetic-candles"
+import {
+  derivePriceFormatFromSetup,
+  visiblePriceRange,
+} from "@/lib/chart/price-format"
 import type { ChartInterval, MarketKlinesStatus } from "@/lib/market/types"
 import type { TradeSetup } from "@/lib/signal-risk/types"
 import { cn } from "@/lib/utils"
@@ -33,6 +40,10 @@ interface PriceLevelChartProps {
   lastPrice: number | null
   isLive: boolean
   error: string | null
+  scopeKey?: string
+  intervals?: ChartInterval[]
+  allowSyntheticFallback?: boolean
+  markers?: SeriesMarker<Time>[]
   className?: string
 }
 
@@ -55,18 +66,25 @@ export function PriceLevelChart({
   lastPrice,
   isLive,
   error,
+  scopeKey = "",
+  intervals,
+  allowSyntheticFallback = true,
+  markers = [],
   className,
 }: PriceLevelChartProps) {
   const containerRef = useRef<HTMLDivElement>(null)
   const chartRef = useRef<IChartApi | null>(null)
   const seriesRef = useRef<ISeriesApi<"Candlestick"> | null>(null)
+  const markersPluginRef = useRef<ISeriesMarkersPluginApi<Time> | null>(null)
   const priceLinesRef = useRef<IPriceLine[]>([])
-  const datasetKeyRef = useRef<string | null>(null)
-  const lastBarTimeRef = useRef<Time | null>(null)
+
+  const priceFormat = useMemo(() => derivePriceFormatFromSetup(setup), [setup])
 
   const useFallback =
-    status === "error" || (candles.length === 0 && status !== "loading")
-  const datasetKey = `${pair}|${interval}|${useFallback ? "synthetic" : "live"}`
+    allowSyntheticFallback &&
+    (status === "error" || (candles.length === 0 && status !== "loading"))
+  const isLoading = status === "loading" || candles.length === 0
+  const dataKey = `${scopeKey}|${pair}|${interval}|${useFallback ? "syn" : "live"}`
 
   useEffect(() => {
     if (!containerRef.current) return
@@ -91,13 +109,12 @@ export function PriceLevelChart({
       rightPriceScale: {
         borderColor: GRID_COLOR,
         scaleMargins: { top: 0.08, bottom: 0.08 },
+        autoScale: true,
       },
       timeScale: {
         borderColor: GRID_COLOR,
         timeVisible: true,
         secondsVisible: false,
-        fixLeftEdge: true,
-        fixRightEdge: true,
       },
       handleScroll: { vertTouchDrag: false },
     })
@@ -113,17 +130,19 @@ export function PriceLevelChart({
 
     chartRef.current = chart
     seriesRef.current = series
-    datasetKeyRef.current = null
-    lastBarTimeRef.current = null
+    markersPluginRef.current = createSeriesMarkers(series, [], { autoScale: false })
 
     return () => {
+      markersPluginRef.current = null
       chartRef.current = null
       seriesRef.current = null
-      datasetKeyRef.current = null
-      lastBarTimeRef.current = null
       chart.remove()
     }
   }, [])
+
+  useEffect(() => {
+    seriesRef.current?.applyOptions({ priceFormat })
+  }, [priceFormat])
 
   useEffect(() => {
     const series = seriesRef.current
@@ -180,51 +199,35 @@ export function PriceLevelChart({
     for (const options of priceLines) {
       priceLinesRef.current.push(series.createPriceLine(options))
     }
-  }, [setup])
+  }, [setup, priceFormat])
 
   useEffect(() => {
     const chart = chartRef.current
     const series = seriesRef.current
     if (!chart || !series) return
 
+    markersPluginRef.current?.setMarkers([])
+
     const data = useFallback ? generateSyntheticCandles(setup) : candles
-    if (data.length === 0) return
-
-    const last = data[data.length - 1]
-    const lastTime = last.time
-    const datasetChanged = datasetKeyRef.current !== datasetKey
-    const timeWentBackwards =
-      lastBarTimeRef.current !== null &&
-      compareTime(lastTime, lastBarTimeRef.current) < 0
-
-    if (datasetChanged || timeWentBackwards || lastBarTimeRef.current === null) {
-      series.setData(data)
-      chart.timeScale().fitContent()
-      datasetKeyRef.current = datasetKey
-      lastBarTimeRef.current = lastTime
+    if (data.length === 0) {
+      series.setData([])
       return
     }
 
-    const cmp = compareTime(lastTime, lastBarTimeRef.current)
-    if (cmp >= 0) {
-      try {
-        series.update(last)
-        lastBarTimeRef.current = lastTime
-      } catch {
-        series.setData(data)
-        chart.timeScale().fitContent()
-        lastBarTimeRef.current = lastTime
-      }
-    }
-  }, [datasetKey, candles, useFallback, setup])
+    series.setData(data)
+    chart.priceScale("right").setVisibleRange(visiblePriceRange(setup, data))
+    chart.timeScale().fitContent()
+    markersPluginRef.current?.setMarkers(markers)
+  }, [dataKey, candles, useFallback, setup, markers])
 
   const displayPrice = lastPrice ?? setup.entry
 
   return (
-    <div className={cn("flex flex-col", className)}>
+    <div className={cn("relative flex flex-col", className)}>
       <ChartToolbar
         interval={interval}
         onIntervalChange={onIntervalChange}
+        intervals={intervals}
         lastPrice={displayPrice}
         isLive={isLive}
         streamStatus={status}
@@ -235,12 +238,22 @@ export function PriceLevelChart({
           {error}
         </p>
       )}
-      <div
-        ref={containerRef}
-        className="h-48 w-full sm:h-56 lg:h-80"
-        role="img"
-        aria-label={`Price chart for ${pair} ${setup.direction}`}
-      />
+      <div className="relative">
+        {isLoading && !useFallback && (
+          <div className="pointer-events-none absolute inset-0 z-10 flex items-center justify-center bg-chart-bg/70 text-xs text-muted-foreground">
+            Loading chart…
+          </div>
+        )}
+        <div
+          ref={containerRef}
+          className={cn(
+            "h-48 w-full sm:h-56 lg:h-80",
+            isLoading && !useFallback && "opacity-40",
+          )}
+          role="img"
+          aria-label={`Price chart for ${pair} ${setup.direction}`}
+        />
+      </div>
     </div>
   )
 }

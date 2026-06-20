@@ -9,6 +9,7 @@ import { OrderPanel } from "@/components/signal-risk-suite/input/order-panel"
 import { PairSelector } from "@/components/signal-risk-suite/input/pair-selector"
 import { TradingLayout } from "@/components/signal-risk-suite/layout/trading-layout"
 import { JournalPanel } from "@/components/signal-risk-suite/journal/journal-panel"
+import { VipHistoryPanel } from "@/components/signal-risk-suite/history/vip-history-panel"
 import { MobileNav, type MobileTab } from "@/components/signal-risk-suite/mobile-nav"
 import { RegisterTradeBar } from "@/components/signal-risk-suite/register-trade-bar"
 import { RiskDashboard } from "@/components/signal-risk-suite/results/risk-dashboard"
@@ -80,6 +81,7 @@ export function SignalRiskSuite() {
     <TabsList variant="line" className="h-9">
       <TabsTrigger value="analyze">Analyze</TabsTrigger>
       <TabsTrigger value="journal">Journal</TabsTrigger>
+      <TabsTrigger value="history">Historial VIP</TabsTrigger>
     </TabsList>
   )
 
@@ -162,6 +164,10 @@ export function SignalRiskSuite() {
             onExport={journal.exportJson}
             onImport={journal.importJson}
           />
+        </TabsContent>
+
+        <TabsContent value="history" className="mt-0 min-w-0 pb-20 md:pb-6">
+          <VipHistoryPanel />
         </TabsContent>
       </AppShell>
     </Tabs>
