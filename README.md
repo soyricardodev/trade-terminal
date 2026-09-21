@@ -1,16 +1,24 @@
 # Trade Terminal
 
-VIP signal parser, leveraged futures risk calculator, and local trade journal. Binance-inspired UI with live klines from public Binance USD-M Futures data.
+A local-first futures risk terminal for turning VIP signals into explicit, reviewable trade plans.
 
-## Features
+**[Open the demo](https://trade-terminal-rho.vercel.app)**
 
-- Paste VIP signals to prefill entry, stop loss, and take-profit levels
-- 50/30/20 reactive exit model with worst/best case and phase matrix
-- Live price chart (15m / 1h / 4h) with entry / SL / TP overlays
-- Order panel with leverage presets, margin sizing, and unrealized PnL
-- Local trade journal with export/import
+## What it does
 
-## Quick start
+- Parses a pasted signal into entry, stop-loss, and take-profit levels
+- Calculates position size, margin, leverage, unrealized PnL, and risk scenarios
+- Models staged exits with a 50/30/20 plan and phase matrix
+- Shows live Binance USD-M Futures candles with entry, SL, and TP overlays
+- Keeps a local trade journal with import and export
+
+The app is an analysis and journaling tool. It does not place orders or provide financial advice.
+
+## Stack
+
+Next.js 16 · React 19 · TypeScript · Tailwind CSS 4 · lightweight-charts · Zod · shadcn/ui
+
+## Development
 
 ```bash
 npm install
@@ -19,19 +27,20 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000).
 
-## Scripts
+```bash
+npm run build       # production build
+npm run typecheck   # TypeScript validation
+npm test            # unit tests for risk and signal logic
+npm run backtest:vip
+```
 
-| Command | Description |
-|---------|-------------|
-| `npm run dev` | Start development server |
-| `npm run build` | Production build |
-| `npm run typecheck` | TypeScript check |
-| `npm test` | Run unit tests |
+## Project structure
 
-## Stack
-
-Next.js 16 · React 19 · Tailwind CSS 4 · lightweight-charts · shadcn/ui
+- `lib/` contains signal parsing, risk calculations, and journal logic.
+- `app/` contains the Next.js application and routes.
+- `components/` contains the interface and chart panels.
+- `scripts/` contains the VIP signal backtest.
 
 ## License
 
-MIT
+MIT. See [LICENSE](./LICENSE).
